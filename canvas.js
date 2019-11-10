@@ -23,3 +23,13 @@ c.stroke();
 c.beginPath();
 c.arc(200, 250, 50, 0, Math.PI * 2, false);
 c.stroke();
+
+for (let i = 0; i < 50; i++) {
+  let x = Math.random() * window.innerWidth;
+  let y = Math.random() * window.innerHeight;
+  c.beginPath();
+  c.arc(x, y, 50, 0, Math.PI * 2, false);
+  // to do: randomize colors
+  c.strokeStyle = 'yellow';
+  c.stroke();
+}
