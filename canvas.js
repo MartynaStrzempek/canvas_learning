@@ -4,6 +4,22 @@ const c = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-c.fillRect(100 ,100, 100, 100);
+c.fillStyle = 'deeppink';
+c.fillRect(50 ,100, 100, 100);
+c.fillStyle = 'blue';
 c.fillRect(400 ,100, 100, 100);
+c.fillStyle = 'green';
 c.fillRect(300 ,300, 100, 100);
+
+// Line
+c.beginPath();
+c.moveTo(50, 300);
+c.lineTo(300, 10);
+c.lineTo(400, 300);
+c.strokeStyle = 'pink';
+c.stroke();
+
+// Arc / Circle
+c.beginPath();
+c.arc(200, 250, 50, 0, Math.PI * 2, false);
+c.stroke();
