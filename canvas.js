@@ -33,20 +33,26 @@ canvas.height = window.innerHeight;
 //   c.stroke();
 // }
 
-let x = 200;
-let dx = 5;
+let x = Math.random() * innerWidth;
+let y = Math.random() * innerHeight;
+let dx = (Math.random() - 0.5) * 8;
+let dy = (Math.random() - 0.5) * 8;
+let radius = 60;
 
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, innerWidth, innerHeight);
 
   c.beginPath();
-  c.arc(x, 200, 50, 0, Math.PI * 2, false);
+  c.arc(x, y, radius, 0, Math.PI * 2, false);
   c.strokeStyle = 'deeppink';
   c.stroke();
 
-  if (x > innerWidth || x === 0) dx = -dx;
+  if (x + radius > innerWidth || x - radius < 0) dx = -dx;
+  if (y + radius > innerHeight || y - radius < 0) dy = -dy;
+
   x += dx;
+  y += dy;
 }
 
 animate();
