@@ -24,12 +24,14 @@ c.beginPath();
 c.arc(200, 250, 50, 0, Math.PI * 2, false);
 c.stroke();
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < 100; i++) {
   let x = Math.random() * window.innerWidth;
   let y = Math.random() * window.innerHeight;
   c.beginPath();
   c.arc(x, y, 50, 0, Math.PI * 2, false);
-  // to do: randomize colors
-  c.strokeStyle = 'yellow';
+  let r = Math.random() * 255;
+  let g = Math.random() * 255;
+  let b = Math.random() * 255;
+  c.strokeStyle = `rgb(${r}, ${g}, ${b})`;
   c.stroke();
 }
